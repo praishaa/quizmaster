@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./signup.css";
+import { Link, useNavigate } from "react-router-dom";
 
 function Signup() {
   const [name, setName] = useState("");
@@ -22,46 +23,82 @@ function Signup() {
     alert(`login clicked\nEmail:${email}\npassword:${password}`);
   };
   return (
-    <form onSubmit={handleSubmit}>
-      <h2>SIgn up</h2>
-      <input
-        type="email"
-        placeholder="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <input
-        type="password"
-        placeholder="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <input
-        type="password"
-        placeholder="confirm password"
-        value={confirm}
-        onChange={(e) => setConfirm(e.target.value)}
-      />
-      <input
-        type="text"
-        placeholder="FULL NAME"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-      />
-      <input
-        type="text"
-        placeholder="qualification"
-        value={qualification}
-        onChange={(e) => setQualification(e.target.value)}
-      />
-      <input
-        type="date"
-        placeholder="DD/MM/YYYY"
-        value={dob}
-        onChange={(e) => setDob(e.target.value)}
-      />
-      <button type="submit">SUBMIT</button>
-    </form>
+    <>
+      <div className="header poppins-regular">WELCOME TO QUIZ MASTER</div>
+      <div className="root poppins-regular">
+        <form className="main" onSubmit={handleSubmit}>
+          <div className="email">
+            <label for="email">EMAIL:</label>
+            <input
+              type="email"
+              placeholder="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+          <div className="password">
+            <label for="password">PASSWORD:</label>
+            <input
+              type="password"
+              placeholder="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+          <div className="confirm">
+            <label for="confirm">CONFIRM PASSWORD:</label>
+            <input
+              type="password"
+              placeholder="confirm password"
+              value={confirm}
+              onChange={(e) => setConfirm(e.target.value)}
+            />
+          </div>
+          <div className="fullname">
+            <label for="fullname">FULL NAME:</label>
+            <input
+              type="text"
+              placeholder="FULL NAME"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+          </div>
+          <div className="qualification">
+            <label for="qualification">QUALIFICATIONS:</label>
+            <input
+              type="text"
+              placeholder="qualification"
+              value={qualification}
+              onChange={(e) => setQualification(e.target.value)}
+            />
+          </div>
+          <div className="date">
+            <label for="date">BIRTH OF DATE:</label>
+            <input
+              type="date"
+              placeholder="DD/MM/YYYY"
+              value={dob}
+              onChange={(e) => setDob(e.target.value)}
+            />
+          </div>
+
+          <button
+            type="submit"
+            style={{
+              border: "none",
+              color: "blue",
+            }}
+          >
+            Login
+          </button>
+          <div className="signuplink">
+            <Link to="/" style={{ color: "red", textDecoration: "none" }}>
+              Already signed up?
+            </Link>
+          </div>
+        </form>
+      </div>
+    </>
   );
 }
 export default Signup;

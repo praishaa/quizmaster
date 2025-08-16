@@ -6,4 +6,84 @@
 .h2 {
   color: blue;
 }
+.email,
+.password,
+.confirm,
+.qualification,
+.fullname,
+.date,
+.signuplink {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 30px;
+  gap: 20px;
+  border-radius: 10px;
+  color: #00bfff;
+}
 
+.email label,
+.password label,
+.date label,
+.qualification label,
+.confirm label,
+.fullname label {
+  width: 120px; /* consistent label width */
+  text-align: right; /* keep text aligned near inputs */
+}
+
+.email input,
+.password input,
+.confirm input,
+.date input,
+.fullname input,
+.qualification input {
+  flex: 1; /* make inputs take remaining space */
+  padding: 5px;
+  border: 1px solid #00bfff;
+  border-radius: 5px;
+}
+.main {
+  display: flex;
+  flex-direction: column; /* stack items vertically */
+  align-items: center; /* horizontal center of items */
+  justify-content: space-between; /* vertical spacing inside container */
+  height: 200px; /* container height for spacing */
+  width: 300px; /* optional width */
+  padding: 20px;
+  border-radius: 10px;
+  gap: 20px;
+}
+.root {
+  display: flex;
+  justify-content: center; /* horizontal center */
+  align-items: center; /* vertical center */
+  /* full viewport height */
+  margin: 0;
+}
+.header {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 3rem;
+  color: #00bfff;
+  font-weight: 900;
+}
+button {
+  background-color: #87cefa;
+  width: 100px;
+  border-radius: 5px;
+}
+button:hover {
+  background-color: #87cefa;
+  border: 1px solid #87cefa;
+}
+.signuplink {
+  color: red;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.signuplink:hover {
+  color: red;
+}
